@@ -67,15 +67,15 @@ namespace USB_Light_control
             }
             StreamWriter sw = new StreamWriter("USB Color.bat");
             sw.WriteLine("@echo off");
-            //sw.WriteLine(Value);
-            //sw.WriteLine("cd /d C:\\Program Files\\RW-Everything");
+            sw.WriteLine(Value);
+            sw.WriteLine("cd /d C:\\Program Files\\RW-Everything");
             sw.WriteLine("rw.exe /command=ScriptName.rw");
             
-            //sw.WriteLine("Start /b rw.exe /Command=\"WEC 0xF7 " + myArray[Line,Colonne]+"\"");
-            //sw.WriteLine("ECHO Applying... ");
-            //sw.WriteLine("timeout /t 2");
-            //sw.WriteLine("taskkill /im rw.exe /f");
-            //sw.WriteLine("timeout /t 3");
+            sw.WriteLine("Start /b rw.exe /Command=\"WEC 0xF7 " + myArray[Line,Colonne]+"\"");
+            sw.WriteLine("ECHO Applying... ");
+            sw.WriteLine("timeout /t 2");
+            sw.WriteLine("taskkill /im rw.exe /f");
+            sw.WriteLine("timeout /t 3");
             sw.Close();
             proc = new Process();
             proc.StartInfo.FileName = "USB Color.bat";
